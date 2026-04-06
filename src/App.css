@@ -6,6 +6,168 @@
 
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  color: #333;
+  background: #f0f4f8;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.header-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  background: #39f;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.app-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Main */
+.app-main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 2rem;
+}
+
+/* Two-column layout */
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.card {
   background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.1);
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #39f;
+}
+
+/* Form fields */
+.field {
+  margin-bottom: 1.1rem;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.35rem;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  background: #fff;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #39f;
+  box-shadow: 0 0 0 3px rgba(51, 153, 255, 0.15);
+}
+
+/* Results */
+.results-card {
+  margin-bottom: 1.5rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 520px) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.metric-value.positive {
+  color: #16a34a;
+}
+
+.metric-value.negative {
+  color: #dc2626;
+}
+
+/* Chart card */
+.chart-card {
+  padding-bottom: 1rem;
 }
