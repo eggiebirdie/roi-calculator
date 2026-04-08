@@ -3,7 +3,7 @@ import Results from './Results'
 import CashFlowChart from './CashFlowChart'
 import { calculateROI } from '../utils/calculations'
 
-function Scenario({ label, accentColor, chartColor, values, onChange }) {
+function Scenario({ label, accentColor, chartColor, values, onChange, chartTheme }) {
   const { cashFlow, totalNetProfit, roi, paybackPeriod } = calculateROI(values)
 
   return (
@@ -17,7 +17,7 @@ function Scenario({ label, accentColor, chartColor, values, onChange }) {
 
       <div className="scenario-main">
         <Results roi={roi} paybackPeriod={paybackPeriod} totalNetProfit={totalNetProfit} />
-        <CashFlowChart cashFlow={cashFlow} color={chartColor} />
+        <CashFlowChart cashFlow={cashFlow} color={chartColor} chartTheme={chartTheme} />
       </div>
     </div>
   )
