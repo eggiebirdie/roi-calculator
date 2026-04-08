@@ -7,29 +7,31 @@ function Results({ roi, paybackPeriod, totalNetProfit }) {
   const profitPositive = totalNetProfit >= 0
 
   return (
-    <div className="card results-card">
-      <h2 className="card-title">Results</h2>
-
+    <div className="results-section">
+      <h2 className="section-title">Results</h2>
       <div className="metrics">
-        <div className="metric">
-          <span className="metric-label">ROI</span>
+        <div className="metric metric--roi">
+          <span className="metric-label">Return on Investment</span>
           <span className={`metric-value ${roiPositive ? 'positive' : 'negative'}`}>
             {fmt(roi)}%
           </span>
+          <span className="metric-tag">ROI</span>
         </div>
 
-        <div className="metric">
+        <div className="metric metric--payback">
           <span className="metric-label">Payback Period</span>
-          <span className="metric-value">
-            {paybackPeriod === null ? 'Never' : `${paybackPeriod} months`}
+          <span className="metric-value neutral">
+            {paybackPeriod === null ? 'Never' : `${paybackPeriod}`}
           </span>
+          {paybackPeriod !== null && <span className="metric-tag">months</span>}
         </div>
 
-        <div className="metric">
+        <div className="metric metric--profit">
           <span className="metric-label">Total Net Profit</span>
           <span className={`metric-value ${profitPositive ? 'positive' : 'negative'}`}>
             ${fmt(totalNetProfit)}
           </span>
+          <span className="metric-tag">USD</span>
         </div>
       </div>
     </div>

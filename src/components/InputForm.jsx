@@ -1,12 +1,15 @@
 function InputForm({ values, onChange }) {
   function handleChange(e) {
     const { name, value } = e.target
-    onChange({ ...values, [name]: name === 'period' ? Number(value) : Number(value) })
+    onChange({ ...values, [name]: Number(value) })
   }
 
   return (
-    <div className="card">
-      <h2 className="card-title">Project Inputs</h2>
+    <div className="sidebar-form">
+      <div className="sidebar-heading">
+        <h2 className="sidebar-title">Project Inputs</h2>
+        <p className="sidebar-desc">Enter your project financials to calculate ROI</p>
+      </div>
 
       <div className="field">
         <label htmlFor="initialInvestment">Initial Investment ($)</label>
